@@ -10,7 +10,7 @@ int read_array(char *file_name)
    FILE *file=fopen(file_name,"r");
     if(!file)
     {
-        printf("error");
+        printf("error in opening file");
         return 0;
     } 
     char buff[1024];

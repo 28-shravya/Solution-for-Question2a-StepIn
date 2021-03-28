@@ -15,7 +15,7 @@ void tearDown()
 void test_empty(void)
 {
     TEST_ASSERT_EQUAL(1,read_array("data.csv"));
-    TEST_ASSERT_EQUAL(0,read_array("abx.csv"));
+    TEST_ASSERT_EQUAL(0,read_array("candidate_id.csv"));
 }
 
 int main(void)

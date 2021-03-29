@@ -10,38 +10,37 @@ int read_array(char *file_name)
    FILE *file=fopen(file_name,"r");
     if(!file)
     {
-        printf("error in opening file");
+        printf("error in opening file!");
         return 0;
     } 
-    char buff[1024];
-    int row_count=0;
-    int field_count=0;
+    char buffer[1024];
+    int row=0;
+    int column=0;
     int i=0;
-    while(fgets(buff,1024,file))
+    while(fgets(buffer,1024,file))
     {
-        field_count=0;
-        row_count++;
-        if(row_count==1)
+        column=0;
+        row++;
+        if(row==1)
         {
             continue;
         }
-        char* token = strtok(buff, ",");
-        int j=0;
+        char* token = strtok(buffer, ",");
         while( token != NULL ) {
-        if(j==0)
+        if(column==0)
         {
             strcpy((arr+i)->name,token);
         }
-        if(j==1)
+        if(column==1)
         {
            strcpy((arr+i)->mail_id,token);
            
         }
-        if(j==2)
+        if(column==2)
         {   strcpy((arr+i)->git_link,token);
           
         }
-        j++;
+        column++;
         token = strtok(NULL, ",");
         }       
         i=i+1;       
